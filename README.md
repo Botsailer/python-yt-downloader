@@ -1,4 +1,4 @@
-# python-yt-downloader
+# A simplest Youtube Resource Downloader in python
 
 
 
