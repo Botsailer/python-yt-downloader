@@ -1,12 +1,9 @@
 import os
 from tkinter import *
 os.system(''' python -m pip install pytube
-python -m pip install requests
-python -m pip install Pillow''')
+python -m pip install requests''')
 print("import of module completed")
 from pytube import YouTube
-from PIL import ImageTk, Image 
-
 def clip():
     global url,ur, link
     cliptext = root.clipboard_get()
@@ -43,6 +40,7 @@ def low():
     Label(c,text="Done downlaod",font=("arial",20)).pack()
     Label(c,text="WILL CLOSE AFTER 5sec",font=("arial",25)).pack()
     c.after(5000,c.destroy)
+    c.mainloop()
 
 def video():
     vidos=Tk()
@@ -51,6 +49,7 @@ def video():
     Label(vidos,text="DOWNLOAD HIGHEST RESOLUTION OR LOWEST",font=("Aireal",15)).pack()
     h=Button(vidos,text="HIGH",command=high,fg="yellow",bg="black").place(x='250',y='50')
     l=Button(vidos,text="Low",command=low,fg="red",bg="#a7f542").place(x='100',y='50')
+    video.mainloop()
 def pro():
     root.destroy()
     win=Tk()
@@ -58,6 +57,7 @@ def pro():
     Label(win,text="Select an option",font=('Arial',15)).pack()
     m=Button(win,activeforeground="green",text="Music",bg="aqua",command=music).place(x='250',y='50')
     v=Button(win,activeforeground="green",text="VIDEO",bg="pink",command=video).place(x='100',y='50')
+    win.mainloop()
 def dw():
     global h1, paste
     global root
@@ -85,3 +85,5 @@ paste=Button(root,text="paste clipboard",fg="red",command=clip)
 paste.pack()
 go=Button(root,text="Go",bg="pink",command=dw)
 go.pack()
+
+root.mainloop()
